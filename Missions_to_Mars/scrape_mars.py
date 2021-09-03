@@ -76,5 +76,7 @@ def scrape():
             hemisphere_urls.append(dict)
         except Exception as e:
             print(e)
-
-
+    # Creating a mars dictionary to contain scraped data
+    Mars_dict = {"News Title":news_title,"News Description":news_paragraph,"Featured Image URL": featured_image_url,"Mars Facts":mars_html,"Hem Images":hemisphere_urls}
+    browser.quit()
+    return Mars_dict
