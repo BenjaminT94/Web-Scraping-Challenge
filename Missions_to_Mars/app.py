@@ -1,11 +1,12 @@
 # Dependencies
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 import pymongo
+from flask_pymongo import PyMongo
 import scrape_mars
 
 app = Flask(__name__)
 
-conn = "mongodb://localhost:27017"
+conn = "mongodb://localhost:27017/mars_app"
 client = pymongo.MongoClient(conn)
 db=client.mars_db
 

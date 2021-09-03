@@ -66,11 +66,11 @@ def scrape():
             html=browser.html
             soup=bs(html,'html.parser')
             image_source=url+soup.find('li').a['href']
-            if (title and image_src):
+            if (title and image_source):
         # Print results of title and image link
                 print('--------------------')
                 print(title)
-                print(image_src)
+                print(image_source)
         # Create dictionary for title and url
             dict={'title':title,'image_url':image_source}
             hemisphere_urls.append(dict)
