@@ -6,17 +6,16 @@ from splinter import Browser
 from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
 import pandas as pd
+from webdriver_manager.chrome import ChromeDriverManager
 
 def scrape():
     executable_path = {'executable_path': ChromeDriverManager().install()}
-    return Browser('chrome', **executable_path, headless=False)
-    browser=init_browser()
+    browser= Browser('chrome', **executable_path, headless=False)
     mars_dict={}
-
-url = 'https://redplanetscience.com/'
-browser.visit(url)
-html=browser.html
-soup=BeautifulSoup(html,'html.parser')
+    url = 'https://redplanetscience.com/'
+    browser.visit(url)
+    html=browser.html
+    soup=bs(html,'html.parser')
 # Part 1: NASA Mars News
 # Scraping the latest news title
 news_title=soup.find_all('div', class_='content_title')[0].text
