@@ -11,7 +11,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 def scrape():
     executable_path = {'executable_path': ChromeDriverManager().install()}
     browser= Browser('chrome', **executable_path, headless=False)
-    mars_dict={}
+    Mars_dict={}
 # Part 1: NASA Mars News
 # Scraping the latest news title
     url = 'https://redplanetscience.com/'
