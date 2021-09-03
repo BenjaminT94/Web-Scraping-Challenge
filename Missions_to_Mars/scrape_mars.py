@@ -25,7 +25,7 @@ def scrape():
     featured_image_url="https://spaceimages-mars.com/image/featured/mars3.jpg"
     browser.visit(url)
     html=browser.html
-    soup=BeautifulSoup(html, 'html.parser')
+    soup=bs(html, 'html.parser')
 # Using splinter to locate the correct class and index of the featured image
     relative_path = soup.find_all('img')[1]["src"]
     featured_image_url = url + relative_path
@@ -50,7 +50,7 @@ def scrape():
     url = 'https://marshemispheres.com/'
     browser.visit(url)
     html = browser.html
-    soup = BeautifulSoup(html, 'html.parser')
+    soup = bs(html, 'html.parser')
 # Scraping hemispheres site and organizing the hemisphere image urls into an empty list
     hemispheres=soup.find('div',class_='container')
     items=hemispheres.find_all('div',class_='item')
@@ -64,7 +64,7 @@ def scrape():
             hem_url=hem.a['href']
             browser.visit(url+hem_url)
             html=browser.html
-            soup=BeautifulSoup(html,'html.parser')
+            soup=bs(html,'html.parser')
             image_source=url+soup.find('li').a['href']
             if (title and image_src):
         # Print results of title and image link
