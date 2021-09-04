@@ -77,6 +77,6 @@ def scrape():
         except Exception as e:
             print(e)
     # Creating a mars dictionary to contain scraped data
-    Mars_dict = {"News Title":news_title,"News Description":news_paragraph,"Featured Image URL": featured_image_url,"Mars Facts":mars_html,"Hem Images":hemisphere_urls}
     browser.quit()
+    Mars_dict = {"News_Title":news_title,"News_Description":news_paragraph,"Featured_Image": featured_image_url,"Mars_Facts":mars_html,"Hem_Images":hemisphere_urls}
     return Mars_dict
