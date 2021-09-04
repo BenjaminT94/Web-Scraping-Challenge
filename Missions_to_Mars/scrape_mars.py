@@ -36,8 +36,8 @@ def scrape():
     tables = pd.read_html(url)
     tables
 # Cleaning up the DataFrame and keeping only what's necessary
-    mars_facts_df = tables[1]
-    mars_facts_df.columns = ["Description", "Data"]
+    mars_facts_df = tables[0]
+    mars_facts_df.columns = ["Description", "Mars","Earth"]
     mars_facts_df
 # Converting the cleaned-up DataFrame back to HTML
     mars_html= mars_facts_df.to_html()
