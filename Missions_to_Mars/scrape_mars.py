@@ -78,5 +78,5 @@ def scrape():
             print(e)
     # Creating a mars dictionary to contain scraped data
     browser.quit()
-    Mars_dict = {"News_Title":news_title,"News_Description":news_paragraph,"Featured_Image": featured_image_url,"Mars_Facts":mars_html,"Hem_Images":hemisphere_urls}
+    Mars_dict = {"news_title":news_title,"news_paragraph":news_paragraph,"featured_image_url": featured_image_url,"mars_html":mars_html,"hemisphere_urls":hemisphere_urls}
     return Mars_dict
